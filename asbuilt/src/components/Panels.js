@@ -23,9 +23,10 @@ export class DIPanel extends React.Component {
                     {this.props.diList.map( 
                         (di)=><li onClick={(e) => this.clickedDI(di.id, e)}>
                             {di.model}, {di.id}
-                    </li>)}
+                     </li>
+                     )}
                 </ul>
-                <h1>{diName}</h1>
+                    <h1>{this.state.diName}</h1>
             </div> 
         );
     }
