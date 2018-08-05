@@ -4,10 +4,10 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 class NavbarFeature extends Component {
     render(){
         return (
-            <Navbar>
+            <Navbar inverse>
                 <Navbar.Header>
                     <Navbar.Brand>
-                    <a href="/">AsBuilt</a>
+                      <a href="/">AsBuilt</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>

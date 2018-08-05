@@ -1,0 +1,24 @@
+.DIPanel {
+    background-color: #CBCECE;
+    width: 20%;
+    height: 100%;
+    min-width: 20%;
+    max-width: 25%;
+    padding: 0px;
+  }
+
+  .DIPanel li {
+    color: black;
+    text-align: left;
+    font-family: calibri;
+    font-size: 10pt;
+  }
+
+  .DIPanel strong {
+    text-align: left;
+    padding-left: 0px;
+  }
+
+  .DIPanel li:hover {
+    background-color: aqua;
+  }
