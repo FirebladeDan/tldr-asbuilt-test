@@ -7,12 +7,6 @@ import './Panels.css';
 export class DIPanel extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {diName: ''};
-    }
-
-    clickedDI(id, e) {
-        e.preventDefault();
-        this.setState(diName => ({diName: id}));
     }
 
     render() {
@@ -21,13 +15,19 @@ export class DIPanel extends React.Component {
                 <strong>Project Devices</strong>
                 <ul>
                     {this.props.diList.map( 
-                        (di)=><li onClick={(e) => this.clickedDI(di.id, e)}>
+                        (di)=><li onClick={DIContextMenu}>
                             {di.model}, {di.id}
                      </li>
                      )}
                 </ul>
-                    <h1>{this.state.diName}</h1>
             </div> 
         );
     }
+}
+
+function DIContextMenu(props) {
+    return (
+        <div className='DIContextMenu'>CONTEXT MENU</div>
+    );
+        
 }

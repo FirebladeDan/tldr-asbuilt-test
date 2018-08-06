@@ -1,8 +1,13 @@
 import React from 'react';
-import { DIPanel } from './Panels';
+import { DIPanel } from './panels/Panels';
+import { RectObject } from './Objects/Objects';
 
 //Home Page Component
 export class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     //Device Instance Test Data
     const diList = [  {model:'SEL-351',   id:'52-351-1'},
@@ -14,6 +19,7 @@ export class Home extends React.Component {
     return (
       <div>
         <DIPanel diList={diList} />
+        <RectObject />
       </div>
     )
   }
