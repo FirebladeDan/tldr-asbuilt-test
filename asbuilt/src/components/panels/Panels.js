@@ -20,7 +20,7 @@ export class DIPanel extends React.Component {
                      </li>
                      )}
                 </ul>
-            </div> 
+            </div>
         );
     }
 }

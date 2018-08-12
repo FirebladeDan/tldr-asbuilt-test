@@ -1,0 +1,27 @@
+.nav-background {
+    top: 0;
+    min-width: 100%;
+    background-color: black;
+    overflow: auto;
+  }
+
+.nav-brand {
+    min-width: 50%;
+    float: left;
+    font-size: 12pt;
+    color: white;
+    font-family: calibri;
+    text-align: left;
+    font-weight: bold;
+    padding: 3px;
+  }
+
+.nav-user {
+    min-width: 50%;
+    float: right;
+    font-size: 12pt;
+    color: white;
+    font-family: calibri;
+    text-align: right;
+    padding: 3px;
+  }

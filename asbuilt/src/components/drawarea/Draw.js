@@ -1,9 +1,10 @@
 import React from 'react';
-import { DIPanel } from './panels/Panels';
-import { RectObject } from './Objects/Objects';
+import { DIPanel } from '../panels/Panels';
+import { RectObject } from '../objects/Objects.js';
+import './draw.css';
 
 //Home Page Component
-export class Home extends React.Component {
+export class Draw extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -17,12 +18,19 @@ export class Home extends React.Component {
                       {model:'SEL-487',   id:'87-T1-B'},
                       {model:'SEL-351',   id:'11-351'}];
     return (
-      <div>
-        <DIPanel diList={diList} />
-        <RectObject />
+      <div className='BodyContainer'>
+        <div className='LeftPanel'>
+          <DIPanel diList={diList} />
+        </div>
+        <div className='Slider'></div>
+        <div className='DrawArea'>
+          <div className='DrawPage'>
+            <RectObject x={200} y={10}/>
+          </div>
+        </div>
       </div>
     )
   }
 }
 
-export default Home;
+export default Draw;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavbarFeature from './NavbarFeature';
+import NavbarFeature from './navbar/NavbarFeature';
 import Router from './Router';
 
 class App extends Component {

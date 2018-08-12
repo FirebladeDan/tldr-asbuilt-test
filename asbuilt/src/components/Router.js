@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from './Home';
+import Draw from './drawarea/Draw';
 // import Roster from './Roster'
 import Schedule from './Schedule'
 
@@ -12,7 +12,7 @@ import Schedule from './Schedule'
 const Router = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Home}/>
+      <Route exact path='/' component={Draw}/>
       {/* <Route path='/roster' component={Roster}/> */}
       <Route path='/schedule' component={Schedule}/>
     </Switch>

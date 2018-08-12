@@ -2,35 +2,25 @@ import React from "react";
 import './Objects.css';
 
 export class RectObject extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state.styles = {
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                width: 0,
-                height: 0
-        }
-    }
-
-    componentDidMount() {
-        this.setState({
-            styles: {
-                position: 'absolute',
-                top: 300,
-                right: 300,
-                width: 100,
-                height:300
-            }
-        });
-    }
-
     //componentWillReceiveProps()
 
     render() {
+        const {x, y} = this.props;
+        const styles = {
+            objectStyle: {
+                position: 'relative',
+                top: y,
+                left: x,
+                width: '100px',
+                height: '30px',
+                fontSize: '8pt',
+                backgroundColor: '#CBCECE',
+                textAlign: 'left'
+            }
+        };
         return (
-            <div ref="root" style={this.state.styles}>
-                Model: SEL-351
+            <div  style={styles.objectStyle}>
+                Model: SEL-351<br></br>
                 ID: 11-251-P
             </div> 
         );
