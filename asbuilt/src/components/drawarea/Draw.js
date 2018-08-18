@@ -9,6 +9,8 @@ export class Draw extends React.Component {
     super(props);
   }
 
+
+
   render() {
     //Device Instance Test Data
     const diList = [  {model:'SEL-351',   id:'52-351-1'},
@@ -25,7 +27,8 @@ export class Draw extends React.Component {
         <div className='Slider'></div>
         <div className='DrawArea'>
           <div className='DrawPage'>
-            <RectObject x={200} y={10}/>
+            <RectObject x={200} y={20} />
+            <RectObject x={400} y={300} />
           </div>
         </div>
       </div>
