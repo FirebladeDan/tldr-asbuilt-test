@@ -1,26 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
+import { ListGroup, ListGroupItem, Label, Panel } from 'react-bootstrap';
 import './Panels.css';
 
 //DIP = Device Instance Panel
 //diList = Device Instance List
 //di = Device Instance
-export class DIPanel extends React.Component {
+export class DIPanel extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div className='DIPanel'>
-                <strong>Project Devices</strong>
-                <ul>
-                    {this.props.diList.map( 
-                        (di)=><li onClick={DIContextMenu}>
-                            {di.model}, {di.id}
-                     </li>
-                     )}
-                </ul>
-            </div>
+            <Panel>
+                <Panel.Heading>
+                <Panel.Title componentClass="h4">Project Devices</Panel.Title>
+                </Panel.Heading>
+                <Panel.Body style={{padding:'0'}}>
+                    <ListGroup>
+                        {this.props.diList.map( 
+                            (di)=><ListGroupItem onClick={DIContextMenu}>
+                                {di.model}, {di.id}
+                        </ListGroupItem>
+                        )}
+                    </ListGroup>
+                </Panel.Body>
+            </Panel>
         );
     }
 }

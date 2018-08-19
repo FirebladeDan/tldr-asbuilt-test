@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component}  from "react";
 import './Objects.css';
 
-export class RectObject extends React.Component {
+export class RectObject extends Component {
     constructor(props) {
         super(props);
         this.x = this.props.x;
