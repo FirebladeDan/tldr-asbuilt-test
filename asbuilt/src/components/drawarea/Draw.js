@@ -5,9 +5,9 @@ import './draw.css';
 
 //Home Page Component
 export class Draw extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
 
 
