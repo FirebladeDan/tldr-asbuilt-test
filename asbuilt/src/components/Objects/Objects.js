@@ -14,21 +14,24 @@ export class RectObject extends React.Component {
         
         // This binding is necessary to make `this` work in the callback
         this.handleSelect = this.handleSelect.bind(this);
+        this.handleMouseDown = this.handleMouseDown.bind(this);
+        this.handleMouseUp = this.handleMouseUp.bind(this);
     }
 
     handleSelect() {
-        if (this.state.borderStyle === 'solid')
-        {
-            this.setState({
-                borderStyle: 'none'
-            });
-        }
-        else
-        {
-            this.setState({
-                borderStyle: 'solid'
-            });
-        }
+        console.log('clicked!');
+    }
+
+    handleMouseDown(){
+        this.setState({
+            borderStyle: 'solid'
+        });
+    }
+
+    handleMouseUp(){
+        this.setState({
+            borderStyle: 'none'
+        });
     }
 
     render() {
@@ -49,10 +52,10 @@ export class RectObject extends React.Component {
         };
         const { objectStyle } = styles;
         return (
-            <div style={objectStyle} onClick={this.handleSelect}>
+            <div style={objectStyle} onMouseDown={this.handleMouseDown} onClick={this.handleSelect} onMouseUp={this.handleMouseUp}>
                 Model: SEL-351<br></br>
                 ID: 11-251-P
-            </div> 
+            </div>
         );
     }
 }

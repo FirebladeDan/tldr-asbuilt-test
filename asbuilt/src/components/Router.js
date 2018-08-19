@@ -13,7 +13,6 @@ const Router = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Draw}/>
-      {/* <Route path='/roster' component={Roster}/> */}
       <Route path='/schedule' component={Schedule}/>
     </Switch>
   </main>
