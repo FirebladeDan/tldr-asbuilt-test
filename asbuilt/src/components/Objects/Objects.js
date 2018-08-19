@@ -1,5 +1,7 @@
 import React, { Component}  from "react";
+import Draggable from 'react-draggable';
 import './Objects.css';
+
 
 export class RectObject extends Component {
     constructor(props) {
@@ -52,10 +54,17 @@ export class RectObject extends Component {
         };
         const { objectStyle } = styles;
         return (
-            <div style={objectStyle} onMouseDown={this.handleMouseDown} onClick={this.handleSelect} onMouseUp={this.handleMouseUp}>
-                Model: SEL-351<br></br>
-                ID: 11-251-P
-            </div>
+            <Draggable>
+                <div>
+                    <div style={objectStyle}
+                        onMouseDown={this.handleMouseDown}
+                        onClick={this.handleSelect}
+                        onMouseUp={this.handleMouseUp}>
+                        Model: SEL-351<br></br>
+                        ID: 11-251-P
+                    </div>
+                </div>
+            </Draggable>
         );
     }
 }

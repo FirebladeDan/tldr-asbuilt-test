@@ -1,7 +1,6 @@
 import React from 'react';
 import { DIPanel } from '../panels/Panels';
 import { RectObject } from '../objects/Objects.js';
-import Draggable from 'react-draggable';
 import './draw.css';
 
 //Home Page Component
@@ -26,16 +25,8 @@ export class Draw extends React.Component {
         <div className='Slider'></div>
         <div className='DrawArea'>
           <div className='DrawPage'>
-          <Draggable>
-            <div>
-              <RectObject x={'200px'} y={'10px'}/>
-            </div>
-          </Draggable>
-          <Draggable>
-            <div>
-              <RectObject x={'400px'} y={'300px'} />
-            </div>
-          </Draggable>
+            <RectObject x={'200px'} y={'10px'}/>
+            <RectObject x={'400px'} y={'300px'} />
           </div>
         </div>
       </div>
