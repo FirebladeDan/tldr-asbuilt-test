@@ -27,8 +27,8 @@ export class Draw extends React.Component {
         <div className='Slider'></div>
         <div className='DrawArea'>
           <div className='DrawPage'>
-            <RectObject x={200} y={20} />
-            <RectObject x={400} y={300} />
+            <RectObject x={'200px'} y={'10px'} />
+            <RectObject x={'400px'} y={'300px'} />
           </div>
         </div>
       </div>
