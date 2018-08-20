@@ -11,7 +11,8 @@ export class RectObject extends Component {
         this.state = {
             borderStyle: 'none',
             x: this.props.x,
-            y: this.props.y
+            y: this.props.y,
+            width: '100px'
         };
         
         // This binding is necessary to make `this` work in the callback
@@ -42,7 +43,7 @@ export class RectObject extends Component {
             position: 'relative',
             top: this.state.y,
             left: this.state.x,
-            width: '100px',
+            width: this.state.width,
             height: '30px',
             fontSize: '8pt',
             backgroundColor: '#CBCECE',
@@ -54,15 +55,10 @@ export class RectObject extends Component {
         };
         const { objectStyle } = styles;
         return (
-            <Draggable>
-                <div>
-                    <div style={objectStyle}
-                        onMouseDown={this.handleMouseDown}
-                        onClick={this.handleSelect}
-                        onMouseUp={this.handleMouseUp}>
-                        Model: SEL-351<br></br>
-                        ID: 11-251-P
-                    </div>
+            <Draggable bounds='parent' style={this.state.width}>
+                <div style={objectStyle} onMouseDown={this.handleMouseDown} onClick={this.handleSelect} onMouseUp={this.handleMouseUp}>
+                    Model: SEL-351<br></br>
+                    ID: 11-251-P
                 </div>
             </Draggable>
         );

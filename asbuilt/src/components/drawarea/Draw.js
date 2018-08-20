@@ -11,12 +11,12 @@ export class Draw extends React.Component {
 
   render() {
     //Device Instance Test Data
-    const diList = [  {model:'SEL-351',   id:'52-351-1'},
-                      {model:'SEL-311L',  id:'87-311L-A'},
-                      {model:'SEL-311L',  id:'87-311L-B'},
-                      {model:'SEL-387E',  id:'87-T1-A'},
-                      {model:'SEL-487',   id:'87-T1-B'},
-                      {model:'SEL-351',   id:'11-351'}];
+    const diList = [  {model:'SEL-351',   id:'52-351-1', dateCreatedEpoch:'1532343'},
+                      {model:'SEL-311L',  id:'87-311L-A', dateCreatedEpoch:'1532343'},
+                      {model:'SEL-311L',  id:'87-311L-B', dateCreatedEpoch:'1532343'},
+                      {model:'SEL-387E',  id:'87-T1-A', dateCreatedEpoch:'1532343'},
+                      {model:'SEL-487',   id:'87-T1-B', dateCreatedEpoch:'1532343'},
+                      {model:'SEL-351',   id:'11-351', dateCreatedEpoch:'1532343'}];
     return (
       <div className='BodyContainer'>
         <div className='LeftPanel'>

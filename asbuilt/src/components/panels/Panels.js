@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ListGroup, ListGroupItem, Label, Panel } from 'react-bootstrap';
+import { ListGroup, ListGroupItem, Well, Collapse, Panel } from 'react-bootstrap';
+import Draggable from 'react-draggable';
 import './Panels.css';
 
 //DIP = Device Instance Panel
@@ -8,6 +9,28 @@ import './Panels.css';
 export class DIPanel extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            openItems: []
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(id){
+        var currentItems = this.state.openItems;
+        if(currentItems.includes(id))
+        {
+            currentItems.pop(id);
+        }
+        else
+        {
+            currentItems.push(id);
+        }
+            
+        this.setState({
+             openItems: currentItems
+        })
     }
 
     render() {
@@ -18,10 +41,17 @@ export class DIPanel extends Component {
                 </Panel.Heading>
                 <Panel.Body style={{padding:'0'}}>
                     <ListGroup>
-                        {this.props.diList.map( 
-                            (di)=><ListGroupItem onClick={DIContextMenu}>
-                                {di.model}, {di.id}
-                        </ListGroupItem>
+                        {this.props.diList.map((di)=>
+                            <ListGroupItem onClick={() => this.handleClick(di.id)}>
+                                {di.id}, {di.model}
+                                <Collapse in={this.state.openItems.includes(di.id)}>
+                                <ListGroup>
+                                    <ListGroupItem>
+                                        'DateCreated': {di.dateCreatedEpoch}
+                                    </ListGroupItem>
+                                </ListGroup>
+                                </Collapse>
+                            </ListGroupItem>
                         )}
                     </ListGroup>
                 </Panel.Body>
@@ -30,9 +60,9 @@ export class DIPanel extends Component {
     }
 }
 
-function DIContextMenu(props) {
-    return (
-        <div className='DIContextMenu'>CONTEXT MENU</div>
-    );
+// function DIContextMenu(props) {
+//     return (
+//         <div className='DIContextMenu'>CONTEXT MENU</div>
+//     );
         
-}
+//}
